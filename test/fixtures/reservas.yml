@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_reserva: 2022-09-21 11:15:56
+  data_devolucao: 2022-09-21 11:15:56
+  status_reserva: MyString
+
+two:
+  data_reserva: 2022-09-21 11:15:56
+  data_devolucao: 2022-09-21 11:15:56
+  status_reserva: MyString

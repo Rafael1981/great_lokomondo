@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyString
+  categoria: MyString
+  data_cad: 2022-09-21 11:15:41
+  data_alte: 2022-09-21 11:15:41
+
+two:
+  titulo: MyString
+  categoria: MyString
+  data_cad: 2022-09-21 11:15:41
+  data_alte: 2022-09-21 11:15:41
