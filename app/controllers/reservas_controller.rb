@@ -4,6 +4,8 @@ class ReservasController < ApplicationController
   # GET /reservas or /reservas.json
   def index
     @reservas = Reserva.all
+    @livros = Livro.all
+    @reservas = Reserva.all
   end
 
   # GET /reservas/1 or /reservas/1.json
@@ -12,15 +14,24 @@ class ReservasController < ApplicationController
 
   # GET /reservas/new
   def new
+    #Adicionando lista de usuarios e livros para os combo boxes
     @reserva = Reserva.new
+    @livros = Livro.all
+    @usuarios = Usuario.all
   end
 
   # GET /reservas/1/edit
   def edit
+    #Adicionando lista de usuarios e livros para os combo boxes
+    @livros = Livro.all
+    @usuarios = Usuario.all
   end
 
   # POST /reservas or /reservas.json
   def create
+    #Adicionando lista de usuarios e livros para os combo boxes
+    @livros = Livro.all
+    @usuarios = Usuario.all
     @reserva = Reserva.new(reserva_params)
 
     respond_to do |format|
@@ -65,6 +76,6 @@ class ReservasController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reserva_params
-      params.require(:reserva).permit(:data_reserva, :data_devolucao, :status_reserva)
+      params.require(:reserva).permit(:data_reserva, :data_devolucao, :usuario_id, :livro_id, :status_reserva)
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_21_141556) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_21_143702) do
   create_table "livros", force: :cascade do |t|
     t.string "titulo"
     t.string "categoria"
@@ -26,6 +26,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_21_141556) do
     t.string "status_reserva"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "usuario_id", null: false
+    t.integer "livro_id", null: false
+    t.index ["livro_id"], name: "index_reservas_on_livro_id"
+    t.index ["usuario_id"], name: "index_reservas_on_usuario_id"
   end
 
   create_table "usuarios", force: :cascade do |t|
@@ -37,4 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_21_141556) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "reservas", "livros"
+  add_foreign_key "reservas", "usuarios"
 end

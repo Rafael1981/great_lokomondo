@@ -22,6 +22,17 @@
   </div>
 
   <div>
+    <%= form.label :livro_id, style: "display: block" %>
+    <%= select("reserva", "livro_id", @livros.collect {|p| [ p.titulo, p.id ] }, {}, class: "form-control")%>
+  </div>
+
+  <div>
+    <%= form.label :usuario_id, style: "display: block" %>
+    <%= select("reserva", "usuario_id", @usuarios.collect {|p| [ p.nome, p.id ] }, {}, class: "form-control")%>
+  </div>
+
+
+  <div>
     <%= form.label :status_reserva, style: "display: block" %>
     <%= form.text_field :status_reserva %>
   </div>
